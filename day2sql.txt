@@ -1,0 +1,52 @@
+select * from stud_details where dept_id in (select id from dept where name='ece' || name ='cse');
+
+
+
+select * from stud_details s  where s.marks< 700 and  dept_id=1;
+
+
+
+select * from stud_details;
+
+
+
+select * from stud_details s, (select * from dept  where id>1) d  where s.marks>700 and d.name='ece';
+
+
+
+
+
+truncate 
+
+drop table stud_details;
+
+
+alter table table_name modify result int;
+
+
+create table sales(
+salesid int not null primary key ,
+salesname varchar(20),
+address varchar(20));
+
+
+
+create table order_sales(
+id int primary key ,
+productname varchar(15),
+address varchar(20), salesid int ,
+constraint FK_order foreign key (salesid)  references sales(salesid));
+
+
+
+select * from sales;
+
+
+select * from order_sales;
+
+
+
+
+select * from sales s 
+inner join order_sales p 
+on s.salesid=p.salesid;
