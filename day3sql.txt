@@ -1,0 +1,24 @@
+select * from sales s 
+inner join order_sales p 
+on s.salesid=p.salesid;
+
+
+
+select * from order_sales where salesid=(select salesid from sales where salesname='bhumika');
+
+
+select s.salesid, p.productname from sales s
+ inner  join order_sales p
+on s.salesid=p.salesid;
+
+select s.salesid, p.productname from sales s
+ left  join order_sales p
+on s.salesid=p.salesid;  
+
+
+
+
+select s.salesid, p.productname from sales s
+ right join order_sales p
+on s.salesid=p.salesid;  
+
