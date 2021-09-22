@@ -1,0 +1,40 @@
+show databases;
+
+
+select * from  student.stud_details;
+
+
+use student;
+
+
+select id , name  from stud_details;
+
+
+select * from dept;
+
+
+select *  from stud_details where  marks> 600;
+
+
+
+select * from stud_details where marks< 500 or marks> 800;
+
+
+select count(*) as total from stud_details;
+
+
+
+select * from stud_details group by id;
+
+
+select distinct * from stud_details;
+
+
+select * from stud_details group by dept_id having  dept_id> 1;
+
+
+select * from stud_details group by name ;
+
+
+
+select s.* from dept d , stud_details s where s.marks> 600 and d.name='cse' and s.dept_id=d.id;
